@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %} <link rel="stylesheet" href="{{ asset('annonce/css/style.css') }}"/> {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+    <header>
+        <h1>{% block h1 %}Projet Annonce{% endblock %}</h1>
+        <ul>
+            <li><a href="{{ path('annonce_homepage') }}">Accueil</a></li>
+            <li><a href="">Annonces</a></li>
+            <li><a href="">Mettre une annonce</a></li>
+            <li><a href="">Mon Compte</a></li>
+            <li><a href="{{ path('faq') }}">FAQ</a></li>
+        </ul>
+    </header>
+        <div id="content">
+            {% block body %}{% endblock %}
+        </div>
+        {% block javascripts %}{% endblock %}
+    <footer>
+        <ul>
+            <li><a href="{{ path('cgu') }}">CGU</a></li>
+            <li><a href="{{ path('mention_legal') }}">Mention Legal</a></li>
+            <li><a href="{{ path('faq') }}">FAQ</a></li>
+        </ul>
+    </footer>
+    </body>
+</html>
